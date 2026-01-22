@@ -5,7 +5,7 @@ public class LevelChangeTrigger : MonoBehaviour
     public LevelManager levelManager;
 
     public GameObject ToLevel;
-    public Vector3 SpawnPoint;
+    public Transform SpawnPoint;
 
     private void Start()
     {
@@ -18,9 +18,7 @@ public class LevelChangeTrigger : MonoBehaviour
         {
             Debug.Log("Trigger Entered");
 
-            levelManager.SpawnPoint = SpawnPoint;
-            levelManager.To = ToLevel;
-            levelManager.LevelChange();
+            levelManager.LevelChange(ToLevel, SpawnPoint);
         }
     }
 }
